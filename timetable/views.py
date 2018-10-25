@@ -1,4 +1,6 @@
 from django.shortcuts import render, HttpResponse
+from django.views.decorators.csrf import csrf_exempt
+from django.db import connection
 
 """
 Syntax of view function: 
@@ -10,6 +12,18 @@ def function_name(request):
 # Create your views here.
 def index(request):
 	return render(request, 'timetable/index.html')
+
+def register(request):
+	return render(request, 'timetable/register.html')
+
+@csrf_exempt
+def create_user(request):
+	cursor = connection.cursor()
+	print(request.POST)
+	q_str = "INSERT INTO user(name, email, username, password) VALUES('{}', '{}', '{}', '{}')".format(request.POST['name'], request.POST['email'], request.POST['username'], request.POST['password'])
+	print(q_str)
+	cursor.execute(q_str)
+	return index(request)
 
 def dashboard(request):
 	# sql statement  - get details where email  = kittiya email

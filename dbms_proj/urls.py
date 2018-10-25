@@ -19,6 +19,8 @@ from timetable import views ## importing views from timetable app
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('register/', views.register),
+    path('create_user/', views.create_user),
     path('', views.index),
     path('dashboard/', views.dashboard),
     path('interests/', views.interests),

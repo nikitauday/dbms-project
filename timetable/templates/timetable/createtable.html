@@ -1,0 +1,88 @@
+<!--
+1. This page requires a form asking for class
+the **number of subjects
+    **ask for number of labs
+2.Once received redirect to page to **enter the name of subjects and **respective  hours and enter name of labs and respective hours
+3.
+-->
+
+
+{% load staticfiles %}				<!--Create new user page-->
+<!DOCTYPE html>
+<html lang="en">
+    <head> 
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		
+		<!-- Website Font style -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+        <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+        <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+        <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+		
+		<!-- Google Fonts -->
+		<link href='https://fonts.googleapis.com/css?family=Passion+One' rel='stylesheet' type='text/css'>
+		<link href='https://fonts.googleapis.com/css?family=Oxygen' rel='stylesheet' type='text/css'>
+
+
+        
+        <!-- Website CSS style -->
+		<link rel="stylesheet" type="text/css" href="{% static 'timetable/stylesheet.css' %}">
+
+		<title>Create Timetable</title>
+	</head>
+	<body>
+		<div class="container">
+			<div class="row main">
+				<div class="panel-heading">
+	               <div class="panel-title text-center">
+	               		<h1 class="title">Details</h1>
+	               		
+	               	</div>
+	            </div> 
+				<div class="main-login main-center">
+					<form class="form-horizontal" method="POST" action="/create_user/">
+                        <div class="form-group">
+							<label for="classname" class="cols-sm-2 control-label">Name of class</label>
+							<div class="cols-sm-10">
+								<div class="input-group">
+									<span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
+									<input type="text" class="form-control" name="classname" id="classname"  placeholder="Class name"/>
+								</div>
+							</div>
+						</div>                       
+                        
+                        
+                        <div class="form-group">
+							<label for="subjectno" class="cols-sm-2 control-label">Number of subjects</label>
+							<div class="cols-sm-10">
+								<div class="input-group">
+									<span class="input-group-addon"><i class="fa fa-envelope fa" aria-hidden="true"></i></span>
+									<input type="number" class="form-control" name="subjectno" id="subjectno"  placeholder="Number of subjects"/>
+								</div>
+							</div>
+						</div>
+
+						<div class="form-group">
+							<label for="labno" class="cols-sm-2 control-label">Number of labs</label>
+							<div class="cols-sm-10">
+								<div class="input-group">
+									<span class="input-group-addon"><i class="fa fa-envelope fa" aria-hidden="true"></i></span>
+									<input type="number" class="form-control" name="labno" id="labno"  placeholder="Number of labs"/>
+								</div>
+							</div>
+						</div>
+
+						<div class="form-group ">
+							<button type="submit" class="btn btn-primary btn-lg btn-block login-button">Create</button>
+						</div>
+						<div class="login-register">
+				            <a href="/">Cancel</a>
+				         </div>
+					</form>
+				</div>
+			</div>
+		</div>
+
+		<script type="text/javascript" src="assets/js/bootstrap.js"></script>
+	</body>
+</html>

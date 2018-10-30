@@ -1,4 +1,4 @@
-{% load staticfiles %}
+{% load staticfiles %}				<!--Create new user page-->
 
 <!DOCTYPE html>
 <html lang="en">
@@ -20,7 +20,7 @@
         <!-- Website CSS style -->
 		<link rel="stylesheet" type="text/css" href="{% static 'timetable/stylesheet.css' %}">
 
-		<title>Admin</title>
+		<title>Sign up</title>
 	</head>
 	<body>
 		<div class="container">
@@ -72,12 +72,22 @@
 								</div>
 							</div>
 						</div>
+						<div class="form-group">
+							<label for="usertype" class="cols-sm-2 control-label">Choose user type</label>
+								<div class="cols-sm-10">
+									<div class="input-group">
+								  		<input type="radio" name="usertype" class="cols-sm-2 control-label" value="Teacher" >Teacher<br>
+								  		<input type="radio" name="usertype" class="cols-sm-2 control-label" value="HOD" >HOD<br>
+										<input type="radio" name="usertype" class="cols-sm-2 control-label" value="Student">Student                    
+									</div>
+								</div>
+							</div>
 
 						<div class="form-group ">
 							<button type="submit" class="btn btn-primary btn-lg btn-block login-button">Register</button>
 						</div>
 						<div class="login-register">
-				            <a href="index.php">Login</a>
+				            <a href="/">Login</a>
 				         </div>
 					</form>
 				</div>

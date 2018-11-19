@@ -86,8 +86,6 @@ def welcomestudent(request):
 
 
 
-def freehour(request):
-	return render(request, 'timetable/index.html')				#Replace index.html with the page to request free hours
 
 def freehoursee(request):
 	return render(request, 'timetable/index.html')				#Replace index.html with the page to see free hours
@@ -177,7 +175,12 @@ def create_func(request):
 		for j in range(6):
 			print(a[i][j] ,end=" ")
 		print('\n')
-		
+	query="INSERT INTO finaltable(period1,period2,period3,period4,period5,period6) values(%s,%s,%s,%s,%s,%s)"
+	cursor.executemany(query,a)
+	connection.commit()
+	query="INSERT INTO temptable(period1,period2,period3,period4,period5,period6) values(%s,%s,%s,%s,%s,%s)"
+	cursor.executemany(query,a)
+	connection.commit()
 	return HttpResponse("Nikita's interests")	
 
 
